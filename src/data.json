@@ -1,0 +1,143 @@
+{
+    "tagmusic": [
+        {
+            "title": "Nhạc trẻ",
+            "description": "Tổng hợp nhạc trẻ mới nhất",
+            "img": "/nhactre.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "title": "Bolero",
+            "description": "Tổng hợp nhạc Bolero mới nhất",
+            "img": "/bolero.jpg"
+        },
+        {
+            "title": "Remix",
+            "description": "Tổng hợp nhạc Remix mới nhất",
+            "img": "/remix.jpg",
+            "tag": "bolero"
+        },
+        {
+            "title": "Hip-hop",
+            "description": "Tổng hợp nhạc Hip-hop mới nhất",
+            "img": "/hiphop.jpg",
+            "tag": "hiphop"
+        },
+        {
+            "title": "Latin",
+            "description": "Tổng hợp nhạc Latin mới nhất",
+            "img": "/latin.jpg",
+            "tag": "latin"
+        },
+        {
+            "title": "Acoustic",
+            "description": "Tổng hợp nhạc Acoustic mới nhất",
+            "img": "/acoustic.jpg",
+            "tag": "acoustic"
+        },
+        {
+            "title": "Rock",
+            "description": "Tổng hợp nhạc Rock mới nhất",
+            "img": "/rock.jpg",
+            "tag": "rock"
+        }
+    ],
+    "singers": [
+        {
+            "singer": "Trịnh Đình Quang",
+            "img": "/thattinh.jpg"
+        },
+        {
+            "singer": "An Vũ- Sino",
+            "img": "/changtraibattu.jpg"
+        },
+        {
+            "singer": "WinD",
+            "img": "/chuyendoita.jpg"
+        },
+        {
+            "singer": "Lâm Tuấn",
+            "img": "/totnhatnen.jpg"
+        },
+        {
+            "singer": "GreyD",
+            "img": "/dubaothoitiet.jpg"
+        },
+        {
+            "singer": "Việt Anh",
+            "img": "/truockhiem.jpg"
+        }
+    ],
+    "musicslike": [
+        {
+            "name": "Thất tình",
+            "link": "/thattinh.mp3",
+            "singer": "Trịnh Đình Quang",
+            "img": "/thattinh.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Chàng trai bất tử",
+            "link": "/ChangTraiBatTu-AnVuSino.mp3",
+            "singer": "An Vũ- Sino",
+            "img": "/changtraibattu.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Chuyện đôi ta",
+            "link": "/chuyendoita.m4a",
+            "singer": "WinD",
+            "img": "/chuyendoita.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Gặp nhau bên nhau là ý trời",
+            "link": "/gapnhaubennhaulaytroi.m4a",
+            "singer": "WinD",
+            "img": "/gapnhaubennhau.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Tốt nhất nên cô đơn",
+            "link": "/Totnhatnencodon.m4a",
+            "singer": "Lâm Tuấn",
+            "img": "/totnhatnen.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Tốt nhất nên cô đơn",
+            "link": "/Totnhatnencodon.m4a",
+            "singer": "Lâm Tuấn",
+            "img": "/totnhatnen.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Liệu rằng em có đau",
+            "link": "/lieurangemcodau.m4a",
+            "singer": "Lâm Tuấn",
+            "img": "/lieurangem.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Dự báo thời tiết hôm nay mưa",
+            "link": "/dubaothoitiethomnaymua.m4a",
+            "singer": "GreyD",
+            "img": "/dubaothoitiet.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Trước khi em tồn tại",
+            "link": "/truockhiemtontai.m4a",
+            "singer": "Việt Anh",
+            "img": "/truockhiem.jpg",
+            "tag": "nhac-tre"
+        },
+        {
+            "name": "Vì ta có hẹn",
+            "link": "/vitacohen.m4a",
+            "singer": "WinD",
+            "img": "/vitacohen.jpg",
+            "tag": "nhac-tre"
+        }
+    ]
+}
