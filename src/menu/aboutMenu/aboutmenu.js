@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/images/Trung-logo-1.jpg';
 export default function AboutMenu() {
     return (
@@ -9,16 +9,16 @@ export default function AboutMenu() {
                 </Link>
                 <ul className='text-[20px] font-bold px-[20px] py-[30px] text-[white]'>
                     <li className='mb-[30px]'>
-                        <Link to={'/'}>Trang chủ</Link>
+                        <NavLink to={'/'}>Trang chủ</NavLink>
                     </li>
                     <li className='mb-[30px]'>
-                        <Link to={'/musics'}>Danh mục bài hát</Link>
+                        <NavLink to={'/musics'}>Danh mục bài hát</NavLink>
                     </li>
                     <li className='mb-[30px]'>
-                        <Link to={'/singers'}>Ca sĩ</Link>
+                        <NavLink to={'/singers'}>Ca sĩ</NavLink>
                     </li>
                     <li className='mb-[30px]'>
-                        <Link to={'/musicslike'}>Bài hát yêu thích</Link>
+                        <NavLink to={'/musicslike'}>Bài hát yêu thích</NavLink>
                     </li>
                 </ul>
             </div>

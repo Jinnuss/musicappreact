@@ -1,18 +1,8 @@
 import demo from '../../assets/images/image.png';
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { SlLike } from "react-icons/sl";
-import GetDataMusic from '../../helps/dataMusic';
-import { useEffect, useState } from 'react';
-import { ref, getDownloadURL } from "firebase/storage";
-import { dbStorage } from '../../firebase/firebase';
 import { FaRegPauseCircle } from "react-icons/fa";
-import GetTags from '../../helps/dataTags';
-import GetSingers from '../../helps/dataSinger';
-import { BiSolidSkipPreviousCircle } from "react-icons/bi";
-import { BiSolidSkipNextCircle } from "react-icons/bi";
-import { RxSpeakerLoud } from "react-icons/rx";
-import MusicBottom from './musicbottom';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 export default function BodyHome() {
     const data = useOutletContext();
@@ -45,7 +35,7 @@ export default function BodyHome() {
                                     </div>
                                 </div>
                                 <div className='flex text-[30px]'>
-                                    {data.play && (data.currenbuttonPlay === index) ? <FaRegPauseCircle onClick={() => data.pauseMp3(index)} className='mx-[10px] cursor-pointer' /> : <FaRegCirclePlay onClick={() => data.playMp3(item.link, index)} className='mx-[10px] cursor-pointer' />}
+                                    {data.play && (data.currenbuttonPlay === index) ? <FaRegPauseCircle onClick={() => data.pauseMp3(index)} className='mx-[10px] cursor-pointer text-[#00ADEF]' /> : <FaRegCirclePlay onClick={() => data.playMp3(item.link, index)} className='mx-[10px] cursor-pointer' />}
                                     <SlLike />
                                 </div>
                             </div>
@@ -61,9 +51,9 @@ export default function BodyHome() {
                     {data.tags.map((item, index) => {
                         return (
                             <div key={index} className=''>
-                                <div className='flex justify-center'>
+                                <Link to={`/${item.tag}`} className='flex justify-center'>
                                     <img className=" h-[200px] w-[200px]  rounded-[10px]" src={data.imgUrlTag[item.title]} alt='avt' />
-                                </div>
+                                </Link>
                                 <div className='text-[20px] font-bold text-center'>
                                     {item.title}
                                 </div>

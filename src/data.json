@@ -4,42 +4,43 @@
             "title": "Nhạc trẻ",
             "description": "Tổng hợp nhạc trẻ mới nhất",
             "img": "/nhactre.jpg",
-            "tag": "nhac-tre"
+            "tag": 1
         },
         {
             "title": "Bolero",
             "description": "Tổng hợp nhạc Bolero mới nhất",
-            "img": "/bolero.jpg"
+            "img": "/bolero.jpg",
+            "tag": 2
         },
         {
             "title": "Remix",
             "description": "Tổng hợp nhạc Remix mới nhất",
             "img": "/remix.jpg",
-            "tag": "bolero"
+            "tag": 3
         },
         {
             "title": "Hip-hop",
             "description": "Tổng hợp nhạc Hip-hop mới nhất",
             "img": "/hiphop.jpg",
-            "tag": "hiphop"
+            "tag": 4
         },
         {
             "title": "Latin",
             "description": "Tổng hợp nhạc Latin mới nhất",
             "img": "/latin.jpg",
-            "tag": "latin"
+            "tag": 5
         },
         {
             "title": "Acoustic",
             "description": "Tổng hợp nhạc Acoustic mới nhất",
             "img": "/acoustic.jpg",
-            "tag": "acoustic"
+            "tag": 6
         },
         {
             "title": "Rock",
             "description": "Tổng hợp nhạc Rock mới nhất",
             "img": "/rock.jpg",
-            "tag": "rock"
+            "tag": 7
         }
     ],
     "singers": [
@@ -70,74 +71,84 @@
     ],
     "musicslike": [
         {
-            "name": "Thất tình",
-            "link": "/thattinh.mp3",
-            "singer": "Trịnh Đình Quang",
-            "img": "/thattinh.jpg",
-            "tag": "nhac-tre"
-        },
-        {
+            "id": 1,
             "name": "Chàng trai bất tử",
             "link": "/ChangTraiBatTu-AnVuSino.mp3",
             "singer": "An Vũ- Sino",
             "img": "/changtraibattu.jpg",
-            "tag": "nhac-tre"
+            "tag": 1
         },
         {
+            "id": 2,
+            "name": "Yên bình có quá đắt không",
+            "link": "/yenbinhcoquadatkhong.m4a",
+            "singer": "Khiem",
+            "img": "/yenbinhcoquadatkhong.jpg",
+            "tag": 1
+        },
+        {
+            "id": 3,
             "name": "Chuyện đôi ta",
             "link": "/chuyendoita.m4a",
             "singer": "WinD",
             "img": "/chuyendoita.jpg",
-            "tag": "nhac-tre"
+            "tag": 2
         },
         {
+            "id": 4,
+            "name": "Thất tình",
+            "link": "/thattinh.mp3",
+            "singer": "Trịnh Đình Quang",
+            "img": "/thattinh.jpg",
+            "tag": 2
+        },
+        {
+            "id": 5,
             "name": "Gặp nhau bên nhau là ý trời",
             "link": "/gapnhaubennhaulaytroi.m4a",
             "singer": "WinD",
             "img": "/gapnhaubennhau.jpg",
-            "tag": "nhac-tre"
+            "tag": 3
         },
         {
+            "id": 6,
             "name": "Tốt nhất nên cô đơn",
             "link": "/Totnhatnencodon.m4a",
             "singer": "Lâm Tuấn",
             "img": "/totnhatnen.jpg",
-            "tag": "nhac-tre"
+            "tag": 3
         },
         {
-            "name": "Tốt nhất nên cô đơn",
-            "link": "/Totnhatnencodon.m4a",
-            "singer": "Lâm Tuấn",
-            "img": "/totnhatnen.jpg",
-            "tag": "nhac-tre"
-        },
-        {
+            "id": 7,
             "name": "Liệu rằng em có đau",
             "link": "/lieurangemcodau.m4a",
             "singer": "Lâm Tuấn",
             "img": "/lieurangem.jpg",
-            "tag": "nhac-tre"
+            "tag": 4
         },
         {
+            "id": 8,
             "name": "Dự báo thời tiết hôm nay mưa",
             "link": "/dubaothoitiethomnaymua.m4a",
             "singer": "GreyD",
             "img": "/dubaothoitiet.jpg",
-            "tag": "nhac-tre"
+            "tag": 4
         },
         {
+            "id": 9,
             "name": "Trước khi em tồn tại",
             "link": "/truockhiemtontai.m4a",
             "singer": "Việt Anh",
             "img": "/truockhiem.jpg",
-            "tag": "nhac-tre"
+            "tag": 1
         },
         {
+            "id": 10,
             "name": "Vì ta có hẹn",
             "link": "/vitacohen.m4a",
             "singer": "WinD",
             "img": "/vitacohen.jpg",
-            "tag": "nhac-tre"
+            "tag": 2
         }
     ]
 }

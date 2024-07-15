@@ -14,9 +14,9 @@ export default function Layout() {
     const [currenbuttonPlay, setindex] = useState(null);
     const [music, setMusic] = useState([]);
     const [tags, setTags] = useState([]);
+    const [alltags, setAllTags] = useState([]);
     const [hidden, sethidden] = useState(false);
     const [music1, setMusic1] = useState([]);
-    const [time, setTime] = useState(0);
     const [currentime, setcurrenTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const db = dbStorage;
@@ -42,6 +42,7 @@ export default function Layout() {
                 const Tags = await GetTags();
                 const data = Tags.slice(0, 4);
                 setTags([...data]);
+                setAllTags([...Tags]);
                 return (data);
             } catch (error) {
                 console.error('Error fetching city data:', error);
@@ -92,7 +93,7 @@ export default function Layout() {
     };
 
 
-    const pauseMp3 = async (path) => {
+    const pauseMp3 = async () => {
         currenAudio.currenTime = currentime;
         currenAudio.pause();
         setPlay(false);
@@ -131,7 +132,7 @@ export default function Layout() {
     useEffect(() => {
         const loadImages = async () => {
             const urls = {};
-            for (const item of tags) {
+            for (const item of alltags) {
                 const url = await fetchImage(item.img); // Assuming each item has an imagePath property
                 if (url) {
                     urls[item.title] = url;
@@ -171,19 +172,20 @@ export default function Layout() {
     }
     // chuyển bài
     const nextMusic = (currenbuttonPlay) => {
-        if (currenbuttonPlay < (music.length - 1)) {
-            playMp3(music[currenbuttonPlay + 1].link, currenbuttonPlay + 1);
-        } else {
-            alert('Hết bài r đại ca!');
-        }
+        playMp3(music[(currenbuttonPlay + 1) % (music.length)].link, (currenbuttonPlay + 1) % (music.length));
     }
     const preMusic = (currenbuttonPlay) => {
-        if (currenbuttonPlay >= 1) {
-            playMp3(music[currenbuttonPlay - 1].link, currenbuttonPlay - 1);
-        } else {
-            alert('Hết bài r đại ca!');
-        }
+        playMp3(music[(currenbuttonPlay + music.length - 1) % (music.length)].link, (currenbuttonPlay + music.length - 1) % (music.length));
     }
+    useEffect(() => {
+        if (currenAudio) {
+            if (duration) {
+                if (parseFloat(duration) === parseFloat(currentime) && parseFloat(currentime) !== 0) {
+                    playMp3(music[(currenbuttonPlay + 1) % (music.length)].link, (currenbuttonPlay + 1) % (music.length));
+                }
+            }
+        }
+    }, [currentime]);
 
     return (
         <>
@@ -191,7 +193,7 @@ export default function Layout() {
                 <AboutMenu />
                 <div className="ml-[270px] pt-[127px] w-[80%]">
                     <Search />
-                    <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag }} />
+                    <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag, alltags }} />
                 </div>
                 <MusicBottom hidden={hidden} currenbuttonPlay={currenbuttonPlay} imgUrl={imgUrl} music={music} preMusic={preMusic} play={play} playMp3={playMp3} pauseMp3={pauseMp3}
                     nextMusic={nextMusic} music1={music1} changeTime={changeTime} currentime={currentime} duration={duration} changeValue={changeValue}

@@ -17,3 +17,7 @@ code {
     monospace; */
   font-family: "Quicksand", sans-serif;
 }
+
+.active {
+  color: #00ADEF;
+}
