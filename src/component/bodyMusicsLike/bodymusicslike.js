@@ -1,48 +1,19 @@
-import { useOutletContext, useParams } from "react-router-dom";
-import { FaRegCirclePlay } from "react-icons/fa6";
-import { FaRegPauseCircle } from "react-icons/fa";
+import { useOutletContext } from "react-router-dom"
 import { AiFillLike } from "react-icons/ai";
 import { AiOutlineLike } from "react-icons/ai";
-export default function DetailSinger() {
-    const { idSinger } = useParams();
+import { FaRegCirclePlay } from "react-icons/fa6";
+import { FaRegPauseCircle } from "react-icons/fa";
+export default function BodyMusicsLike() {
     const data = useOutletContext();
-    const dataMusicSinger = data.music.filter((item) => item.singer === data.singersall[parseInt(idSinger) - 1].singer);
+    const dataMusicLike = data.music.filter((item) => item.like === true);
     const dataEmpty = ['', '', ''];
     return (
         <>
-            <div className='flex items-center'>
-                {data.singersall[parseInt(idSinger) - 1] ?
-                    (
-                        <>
-                            <div className='flex justify-center'>
-                                <img className=" h-[150px] w-[150px] rounded-[10px]" src={data.imgUrlSingers[data.singersall[parseInt(idSinger) - 1].singer]} alt='avt' />
-                            </div>
-                            <div className="ml-[20px]">
-                                <div className='text-[26px] mb-[10px] w-[200px] h-[50px] text-[#00ADEF] font-bold '>
-                                    {data.singersall[parseInt(idSinger) - 1].singer}
-                                </div>
-                            </div>
-                        </>
-                    )
-                    :
-                    (
-                        <>
-                            <div className='flex justify-center'>
-                                <div className=" h-[150px] w-[150px] rounded-[10px] bg-[#B5B5B5]" />
-                            </div>
-                            <div className="ml-[20px]">
-                                <div className='text-[26px] mb-[10px] w-[200px] h-[50px] text-[#00ADEF] rounded-[10px] font-bold  bg-[#B5B5B5]' />
-                            </div>
-                        </>
-
-                    )
-                }
-            </div>
             <div className='text-[26px] font-bold my-[20px]'>
                 DANH SÁCH BÀI HÁT
             </div>
             <div className="pb-[120px]">
-                {dataMusicSinger.length === 0 ?
+                {dataMusicLike.length === 0 ?
                     (
                         (dataEmpty.map((item, index) => {
                             return (
@@ -64,7 +35,7 @@ export default function DetailSinger() {
                         )
                     ) :
                     (
-                        (dataMusicSinger.map((item, index) => {
+                        (dataMusicLike.map((item, index) => {
                             return (
                                 <div key={index} className='bg-[#212121] mb-[10px] p-[10px] rounded-[10px] flex items-center justify-between'>
                                     <div className='flex'>

@@ -20,7 +20,7 @@ const MusicBottom = ({ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, 
                     <div className='w-[50%]'>
                         <div className='flex text-[40px] justify-center mb-[20px]'>
                             <BiSolidSkipPreviousCircle onClick={() => preMusic(currenbuttonPlay)} className='mx-[10px] cursor-pointer' />
-                            {play ? <FaRegPauseCircle onClick={() => pauseMp3(currenbuttonPlay)} className='mx-[10px] cursor-pointer' /> : <FaRegCirclePlay onClick={() => playMp3(music1[currenbuttonPlay].link, currenbuttonPlay)} className='mx-[10px] cursor-pointer' />}
+                            {play ? <FaRegPauseCircle onClick={() => pauseMp3(currenbuttonPlay)} className='mx-[10px] cursor-pointer' /> : <FaRegCirclePlay onClick={() => playMp3(music[currenbuttonPlay].link, currenbuttonPlay)} className='mx-[10px] cursor-pointer' />}
                             <BiSolidSkipNextCircle onClick={() => nextMusic(currenbuttonPlay)} className='mx-[10px] cursor-pointer' />
                         </div>
                         <div className='flex item-center pt-[4px] ml-[10px]'>

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, update } from "firebase/database";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
@@ -40,5 +40,28 @@ export const Getdb = async (path) => {
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error;
+    }
+}
+
+export const SetTrueLike = async (path) => {
+    const reference = ref(dbFirebase, path);
+    try {
+        await update(reference, {
+            like: true
+        });
+        console.log("Dữ liệu đã được cập nhật thành công!");
+    } catch (error) {
+        console.error("Lỗi cập nhật dữ liệu: ", error);
+    }
+}
+export const SetFalse = async (path) => {
+    const reference = ref(dbFirebase, path);
+    try {
+        await update(reference, {
+            like: false
+        });
+        console.log("Dữ liệu đã được cập nhật thành công!");
+    } catch (error) {
+        console.error("Lỗi cập nhật dữ liệu: ", error);
     }
 }

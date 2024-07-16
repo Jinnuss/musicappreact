@@ -4,7 +4,7 @@ import Search from "../search/search";
 import MusicBottom from "../bodyHome/musicbottom";
 import { useEffect, useState } from "react";
 import { getDownloadURL, ref } from "firebase/storage";
-import { dbStorage } from "../../firebase/firebase";
+import { dbStorage, SetFalse, SetTrueLike } from "../../firebase/firebase";
 import GetDataMusic from "../../helps/dataMusic";
 import GetTags from "../../helps/dataTags";
 import GetSingers from "../../helps/dataSinger";
@@ -173,6 +173,14 @@ export default function Layout() {
         }
     }
     // chuyển bài
+    // const nextMusic = (currenbuttonPlay) => {
+    //     console.log(dataMusicLike);
+    //     console.log(currenbuttonPlay);
+    //     playMp3(dataMusicLike[(currenbuttonPlay + 1) % (dataMusicLike.length)].link, (currenbuttonPlay + 1) % (dataMusicLike.length));
+    // }
+    // const preMusic = (currenbuttonPlay) => {
+    //     playMp3(dataMusicLike[(currenbuttonPlay + dataMusicLike.length - 1) % (dataMusicLike.length)].link, (currenbuttonPlay + dataMusicLike.length - 1) % (dataMusicLike.length));
+    // }
     const nextMusic = (currenbuttonPlay) => {
         playMp3(music[(currenbuttonPlay + 1) % (music.length)].link, (currenbuttonPlay + 1) % (music.length));
     }
@@ -188,6 +196,33 @@ export default function Layout() {
             }
         }
     }, [currentime]);
+    const [dataMusicLike, setDataMusicLike] = useState([]);
+    const handlelike = (item) => {
+        const updateLikeMusic1 = music1.map((i) => {
+            if (i.id === item.id) {
+                return { ...i, like: !i.like };
+            }
+            return i;
+        });
+        setMusic1(updateLikeMusic1);
+        const updateLikeMusic = music.map((i) => {
+            if (i.id === item.id) {
+                return { ...i, like: !i.like };
+            }
+            return i;
+        });
+        setDataMusicLike(updateLikeMusic.filter((item) => item.like === true));
+        setMusic(updateLikeMusic);
+        if (item.like === false) {
+            SetTrueLike(`/musicslike/${item.id - 1}`);
+        }
+        if (item.like === true) {
+            SetFalse(`/musicslike/${item.id - 1}`);
+        }
+    };
+    useEffect(() => {
+        setDataMusicLike(music.filter((item) => item.like === true));
+    }, [music])
 
     return (
         <>
@@ -195,7 +230,7 @@ export default function Layout() {
                 <AboutMenu />
                 <div className="ml-[270px] pt-[127px] w-[80%]">
                     <Search />
-                    <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag, alltags, singersall }} />
+                    <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag, alltags, singersall, handlelike, dataMusicLike }} />
                 </div>
                 <MusicBottom hidden={hidden} currenbuttonPlay={currenbuttonPlay} imgUrl={imgUrl} music={music} preMusic={preMusic} play={play} playMp3={playMp3} pauseMp3={pauseMp3}
                     nextMusic={nextMusic} music1={music1} changeTime={changeTime} currentime={currentime} duration={duration} changeValue={changeValue}

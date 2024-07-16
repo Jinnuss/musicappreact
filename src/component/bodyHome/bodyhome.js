@@ -1,6 +1,7 @@
 import demo from '../../assets/images/image.png';
 import { FaRegCirclePlay } from "react-icons/fa6";
-import { SlLike } from "react-icons/sl";
+import { AiFillLike } from "react-icons/ai";
+import { AiOutlineLike } from "react-icons/ai";
 import { FaRegPauseCircle } from "react-icons/fa";
 import { Link, useOutletContext } from 'react-router-dom';
 
@@ -61,7 +62,7 @@ export default function BodyHome() {
                                             </div>
                                             <div className='flex text-[30px]'>
                                                 {data.play && (data.currenbuttonPlay === index) ? <FaRegPauseCircle onClick={() => data.pauseMp3(index)} className='mx-[10px] cursor-pointer text-[#00ADEF]' /> : <FaRegCirclePlay onClick={() => data.playMp3(item.link, index)} className='mx-[10px] cursor-pointer' />}
-                                                <SlLike />
+                                                {item.like ? <AiFillLike onClick={() => data.handlelike(item)} /> : <AiOutlineLike onClick={() => data.handlelike(item)} />}
                                             </div>
                                         </div>
                                     )

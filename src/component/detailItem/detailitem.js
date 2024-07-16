@@ -1,8 +1,8 @@
 import { useOutletContext, useParams } from "react-router-dom"
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { FaRegPauseCircle } from "react-icons/fa";
-import { SlLike } from "react-icons/sl";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { AiFillLike } from "react-icons/ai";
+import { AiOutlineLike } from "react-icons/ai";
 export default function DetailItem() {
     const { id } = useParams();
     const data = useOutletContext();
@@ -80,7 +80,7 @@ export default function DetailItem() {
                                     </div>
                                     <div className='flex text-[30px]'>
                                         {data.play && (item.name === data.music[data.currenbuttonPlay].name) ? <FaRegPauseCircle onClick={() => data.pauseMp3()} className='mx-[10px] cursor-pointer text-[#00ADEF]' /> : <FaRegCirclePlay onClick={() => data.playMp3(item.link, item.id - 1)} className='mx-[10px] cursor-pointer' />}
-                                        <SlLike />
+                                        {item.like ? <AiFillLike onClick={() => data.handlelike(item)} /> : <AiOutlineLike onClick={() => data.handlelike(item)} />}
                                     </div>
                                 </div>
                             )
