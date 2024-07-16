@@ -6,6 +6,7 @@ import Musics from './menu/Musics/musics';
 import Singers from './menu/Singers/singers';
 import Home from './menu/Home/home';
 import DetailItem from './component/detailItem/detailitem';
+import DetailSinger from './component/detailSinger/detailSinger';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/:id' element={<DetailItem />} />
+          <Route path='/itemSinger'>
+            <Route path=':idSinger' element={<DetailSinger />} />
+          </Route>
           <Route path='/musics' element={<Musics />} />
           <Route path='/musicslike' element={<Musicslike />} />
           <Route path='/singers' element={<Singers />} />

@@ -1,7 +1,9 @@
+import BodySingers from "../../component/bodySingers/bodysingers";
+
 export default function Singers() {
     return (
         <>
-            <h1>singers page</h1>
+            <BodySingers />
         </>
     )
 }

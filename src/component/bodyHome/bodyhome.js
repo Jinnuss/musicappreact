@@ -134,9 +134,9 @@ export default function BodyHome() {
                                 data.singers.map((item, index) => {
                                     return (
                                         <div key={index} className=''>
-                                            <div className='flex justify-center pb-[20px]'>
+                                            <Link to={`/itemSinger/${item.idSinger}`} className='flex justify-center pb-[20px]'>
                                                 <img className="h-[200px] w-[200px]  rounded-[10px]" src={data.imgUrlSingers[item.singer]} alt='avt' />
-                                            </div>
+                                            </Link>
                                             <div className='text-[20px] font-bold text-center'>
                                                 {item.singer}
                                             </div>

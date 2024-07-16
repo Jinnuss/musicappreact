@@ -52,12 +52,14 @@ export default function Layout() {
     }, []);
     // console.log(tags);
     const [singers, setSingers] = useState([]);
+    const [singersall, setAllSingers] = useState([]);
     useEffect(() => {
         const dataSingers = async () => {
             try {
                 const Singers = await GetSingers();
                 const data = Singers.slice(0, 4);
                 setSingers([...data]);
+                setAllSingers([...Singers]);
                 return (data);
             } catch (error) {
                 console.error('Error fetching city data:', error);
@@ -147,7 +149,7 @@ export default function Layout() {
     useEffect(() => {
         const loadImages = async () => {
             const urls = {};
-            for (const item of singers) {
+            for (const item of singersall) {
                 const url = await fetchImage(item.img); // Assuming each item has an imagePath property
                 if (url) {
                     urls[item.singer] = url;
@@ -193,7 +195,7 @@ export default function Layout() {
                 <AboutMenu />
                 <div className="ml-[270px] pt-[127px] w-[80%]">
                     <Search />
-                    <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag, alltags }} />
+                    <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag, alltags, singersall }} />
                 </div>
                 <MusicBottom hidden={hidden} currenbuttonPlay={currenbuttonPlay} imgUrl={imgUrl} music={music} preMusic={preMusic} play={play} playMp3={playMp3} pauseMp3={pauseMp3}
                     nextMusic={nextMusic} music1={music1} changeTime={changeTime} currentime={currentime} duration={duration} changeValue={changeValue}
