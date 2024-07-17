@@ -226,7 +226,7 @@ export default function Layout() {
 
     return (
         <>
-            <div className="relative min-h-[100vh]  px-[120px] bg-[#292929] text-[white]">
+            <div className="layout relative min-h-[100vh]  px-[120px] text-[white]">
                 <AboutMenu />
                 <div className="ml-[270px] pt-[127px] w-[80%]">
                     <Search />

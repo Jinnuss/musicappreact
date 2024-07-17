@@ -70,7 +70,7 @@ export default function DetailItem() {
                     (
                         (dataMusicTag.map((item, index) => {
                             return (
-                                <div key={index} className='bg-[#212121] mb-[10px] p-[10px] rounded-[10px] flex items-center justify-between'>
+                                <div key={index} className='card1 mb-[10px] p-[10px] rounded-[10px] flex items-center justify-between'>
                                     <div className='flex'>
                                         <img className="w-[70px] mr-[20px] h-[70px] rounded-[10px]" src={data.imgUrl[item.name]} alt='avt' />
                                         <div>

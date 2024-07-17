@@ -28,11 +28,11 @@ export default function BodySingers() {
                         (
                             data.singersall.map((item, index) => {
                                 return (
-                                    <div key={index} className='mb-[40px] mr-[20px]'>
+                                    <div key={index} className='mb-[40px] mr-[20px] card'>
                                         <Link to={`/itemSinger/${item.idSinger}`} className='flex justify-center'>
                                             <img className=" h-[200px] w-[200px]  rounded-[10px]" src={data.imgUrlSingers[item.singer]} alt='avt' />
                                         </Link>
-                                        <div className='text-[20px] font-bold text-center'>
+                                        <div className='text-[20px] font-bold text-center mt-[10px]'>
                                             {item.singer}
                                         </div>
                                     </div>

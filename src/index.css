@@ -21,3 +21,61 @@ code {
 .active {
   color: #00ADEF;
 }
+
+.layout {
+  background: linear-gradient(90deg, rgba(1, 0, 10, 1) 50%, rgba(74, 74, 93, 1) 100%, rgba(231, 238, 238, 1) 100%);
+
+
+}
+
+.itemhome {
+  box-shadow: rgba(245, 245, 245, 0.25) 0px 20px 55px, rgba(249, 248, 248, 0.12) 0px -12px 8px, rgba(253, 253, 253, 0.12) 0px 4px 6px, rgba(241, 240, 240, 0.17) 0px 12px 13px, rgba(237, 235, 235, 0.09) 0px -3px 5px;
+  transition: all 0.3s;
+  border: 2px solid #00abef00;
+}
+
+.itemhome:hover {
+  color: #00ADEF;
+  border: 2px solid #00ADEF;
+}
+
+.card1 {
+  border: 2px solid #00abef00;
+  background: linear-gradient(90deg, rgba(1, 0, 10, 1) 4%, rgba(74, 74, 93, 1) 48%, rgba(14, 15, 15, 1) 100%);
+  box-shadow: rgba(249, 248, 248, 0.24) 0px 3px 8px;
+  transition: all 0.3s;
+
+}
+
+.card1:hover {
+  border: 2px solid #00ADEF;
+}
+
+.card {
+  width: 23%;
+  padding: 10px 5px;
+  border-radius: 10px;
+  background: linear-gradient(0deg, rgba(1, 0, 10, 1) 0%, rgb(37, 37, 47) 35%, rgb(47, 61, 64) 100%);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  color: #00ADEF;
+  box-shadow: rgba(244, 242, 242, 0.35) 0px 5px 15px;
+
+}
+
+.aboutmenu {
+  background: linear-gradient(180deg, rgba(1, 0, 10, 1) 50%, rgba(74, 74, 93, 1) 100%, rgba(231, 238, 238, 1) 100%);
+  box-shadow: rgba(244, 242, 242, 0.35) 0px 5px 15px;
+
+}
+
+.itemmenu {
+  transition: all 0.3s;
+}
+
+.musicbottom {
+  background: linear-gradient(180deg, rgba(4, 0, 38, 1) 50%, rgba(74, 74, 93, 1) 100%, rgba(231, 238, 238, 1) 100%);
+
+}

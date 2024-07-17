@@ -29,14 +29,14 @@ export default function BodyMusic() {
                         (
                             data.alltags.map((item, index) => {
                                 return (
-                                    <div key={index} className='mb-[40px] mr-[20px]'>
+                                    <div key={index} className='mb-[40px] mr-[20px] card'>
                                         <Link to={`/${item.tag}`} className='flex justify-center'>
                                             <img className=" h-[200px] w-[200px]  rounded-[10px]" src={data.imgUrlTag[item.title]} alt='avt' />
                                         </Link>
-                                        <div className='text-[20px] font-bold text-center'>
+                                        <div className='text-[20px] mt-[10px] font-bold text-center'>
                                             {item.title}
                                         </div>
-                                        <div className='text-[#6A6A6A]'>{item.description}</div>
+                                        <div className='text-[#6A6A6A] text-center'>{item.description}</div>
                                     </div>
                                 )
                             })

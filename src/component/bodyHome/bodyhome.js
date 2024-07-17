@@ -12,19 +12,19 @@ export default function BodyHome() {
     return (
         <>
             <div className='flex justify-between mb-[40px]'>
-                <div className='w-[49%] relative h-[360px] overflow-hidden rounded-[20px]'>
+                <div className='itemhome w-[49%] relative h-[360px] overflow-hidden rounded-[20px]'>
                     <img className='absolute z-[0] cover opacity-20' src={demo} alt='avt' />
                     <div className='relative z-[2] w-[70%] pt-[60px] pl-[30px]'>
-                        <div className='text-[32px] font-bold mb-[10px]'>
-                            Nhạc EDM
+                        <div className='flex justify-center'>
+                            <div className='text-[32px] font-bold'>
+                                TỔNG HỢP NHỮNG CA KHÚC HOT NHẤT NĂM 2024
+                            </div>
                         </div>
-                        <div className=''>
-                            Top 100 Nhạc Electronic/Dance Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Electronic/Dance Âu Mỹ
-                        </div>
+
                     </div>
                 </div>
                 <div className='w-[49%]'>
-                    <div className='text-[32px] font-bold mb-[20px]'>
+                    <div className='text-[32px] font-bold mb-[15px]'>
                         Nghe Nhiều
                     </div>
                     {
@@ -32,7 +32,7 @@ export default function BodyHome() {
                             (
                                 dataEmpty.map((item, index) => {
                                     return (
-                                        <div key={index} className='bg-[#212121] mb-[10px] p-[10px] rounded-[10px] flex items-center justify-between'>
+                                        <div key={index} className=' bg-[#212121] mb-[10px] p-[10px] rounded-[10px] flex items-center justify-between'>
                                             <div className='flex'>
                                                 <div className=" h-[70px] w-[70px] rounded-[10px] bg-[#B5B5B5]" />
                                                 <div>
@@ -52,7 +52,7 @@ export default function BodyHome() {
                             (
                                 data.music1.map((item, index) => {
                                     return (
-                                        <div key={index} className='bg-[#212121] mb-[10px] p-[10px] rounded-[10px] flex items-center justify-between'>
+                                        <div key={index} className='card1 mb-[8px] p-[10px] rounded-[10px] flex items-center justify-between'>
                                             <div className='flex'>
                                                 <img className="w-[70px] mr-[20px] h-[70px] rounded-[10px]" src={data.imgUrl[item.name]} alt='avt' />
                                                 <div>
@@ -95,14 +95,14 @@ export default function BodyHome() {
                             (
                                 data.tags.map((item, index) => {
                                     return (
-                                        <div key={index} className=''>
+                                        <div key={index} className='card'>
                                             <Link to={`/${item.tag}`} className='flex justify-center'>
                                                 <img className=" h-[200px] w-[200px]  rounded-[10px]" src={data.imgUrlTag[item.title]} alt='avt' />
                                             </Link>
-                                            <div className='text-[20px] font-bold text-center'>
+                                            <div className='text-[20px] mt-[10px] font-bold text-center'>
                                                 {item.title}
                                             </div>
-                                            <div className='text-[#6A6A6A]'>{item.description}</div>
+                                            <div className='text-[#6A6A6A] text-[14px] text-center'>{item.description}</div>
                                         </div>
                                     )
                                 })
@@ -134,7 +134,7 @@ export default function BodyHome() {
                             (
                                 data.singers.map((item, index) => {
                                     return (
-                                        <div key={index} className=''>
+                                        <div key={index} className='card'>
                                             <Link to={`/itemSinger/${item.idSinger}`} className='flex justify-center pb-[20px]'>
                                                 <img className="h-[200px] w-[200px]  rounded-[10px]" src={data.imgUrlSingers[item.singer]} alt='avt' />
                                             </Link>
