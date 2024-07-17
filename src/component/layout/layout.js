@@ -228,8 +228,8 @@ export default function Layout() {
         <>
             <div className="layout relative min-h-[100vh]  px-[120px] text-[white]">
                 <AboutMenu />
-                <div className="ml-[270px] pt-[127px] w-[80%]">
-                    <Search />
+                <div className="ml-[270px] pt-[30px] w-[80%]">
+                    {/* <Search /> */}
                     <Outlet context={{ hidden, currenbuttonPlay, imgUrl, music, preMusic, play, pauseMp3, playMp3, music1, nextMusic, changeTime, currentime, duration, changeValue, tags, imgUrlSingers, singers, imgUrlTag, alltags, singersall, handlelike, dataMusicLike }} />
                 </div>
                 <MusicBottom hidden={hidden} currenbuttonPlay={currenbuttonPlay} imgUrl={imgUrl} music={music} preMusic={preMusic} play={play} playMp3={playMp3} pauseMp3={pauseMp3}

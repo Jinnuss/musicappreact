@@ -9,7 +9,7 @@ export default function BodyMusicsLike() {
     const dataEmpty = ['', '', ''];
     return (
         <>
-            <div className='text-[26px] font-bold my-[20px]'>
+            <div className='text-[32px] font-bold mb-[20px]'>
                 DANH SÁCH BÀI HÁT
             </div>
             <div className="pb-[120px]">
